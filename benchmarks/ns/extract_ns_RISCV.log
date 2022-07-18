@@ -1,0 +1,16 @@
+Heptane extract::Generating files (ns)
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-cpp -DRISCV_ARCHI -I. -I.. ns.c>/tmp/ns.c
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-gcc -O0 -fomit-frame-pointer -ggdb -c -S  /tmp/ns.c -o /tmp/ns.s
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-as  /tmp/ns.s -o /tmp/ns.o
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-ld  -e main -o /tmp/ns /tmp/ns.o
+** Executing : /bin/cp -f /tmp/ns ./ns.exe 
+** Executing : /bin/cp -f /tmp/ns.s ./ns.s
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-readelf -W  -S /tmp/ns>/tmp/ns.readelf
+** Executing : /bin/cp -f /tmp/ns.readelf  ./ns.readelf 
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-objdump  -ztd /tmp/ns > /tmp/ns.objdump
+Objdump done (address extraction)
+** Executing : /bin/cp -f /tmp/ns.objdump ./ns.objdump
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-objdump  -s -z --section=.wcet_annot /tmp/ns >  /tmp/ns.annot
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-objdump  -s -z --section=.switch_begin /tmp/ns > /tmp/ns.switch
+Heptane extract::Creating Cfg
+

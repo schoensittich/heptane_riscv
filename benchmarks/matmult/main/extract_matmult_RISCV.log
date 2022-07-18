@@ -1,0 +1,16 @@
+Heptane extract::Generating files (matmult)
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-cpp -DRISCV_ARCHI -I. -I.. matmult.c>/tmp/matmult.c
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-gcc -O0 -fomit-frame-pointer -ggdb -c -S  /tmp/matmult.c -o /tmp/matmult.s
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-as  /tmp/matmult.s -o /tmp/matmult.o
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-ld  -e main -o /tmp/matmult /tmp/matmult.o
+** Executing : /bin/cp -f /tmp/matmult main/matmult.exe 
+** Executing : /bin/cp -f /tmp/matmult.s main/matmult.s
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-readelf -W  -S /tmp/matmult>/tmp/matmult.readelf
+** Executing : /bin/cp -f /tmp/matmult.readelf  main/matmult.readelf 
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-objdump  -ztd /tmp/matmult > /tmp/matmult.objdump
+Objdump done (address extraction)
+** Executing : /bin/cp -f /tmp/matmult.objdump main/matmult.objdump
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-objdump  -s -z --section=.wcet_annot /tmp/matmult >  /tmp/matmult.annot
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-objdump  -s -z --section=.switch_begin /tmp/matmult > /tmp/matmult.switch
+Heptane extract::Creating Cfg
+

@@ -1,0 +1,16 @@
+Heptane extract::Generating files (simple)
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-cpp -DRISCV_ARCHI -I. -I.. simple.c>/tmp/simple.c
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-gcc -O0 -fomit-frame-pointer -ggdb -c -S  /tmp/simple.c -o /tmp/simple.s
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-as  /tmp/simple.s -o /tmp/simple.o
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-ld  -e main -o /tmp/simple /tmp/simple.o
+** Executing : /bin/cp -f /tmp/simple ./simple.exe 
+** Executing : /bin/cp -f /tmp/simple.s ./simple.s
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-readelf -W  -S /tmp/simple>/tmp/simple.readelf
+** Executing : /bin/cp -f /tmp/simple.readelf  ./simple.readelf 
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-objdump  -ztd /tmp/simple > /tmp/simple.objdump
+Objdump done (address extraction)
+** Executing : /bin/cp -f /tmp/simple.objdump ./simple.objdump
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-objdump  -s -z --section=.wcet_annot /tmp/simple >  /tmp/simple.annot
+** Executing : /home/andre/uni/heptane_riscv/heptane-master/CROSS_COMPILERS/RISCV/bin/riscv32-unknown-linux-gnu-objdump  -s -z --section=.switch_begin /tmp/simple > /tmp/simple.switch
+Heptane extract::Creating Cfg
+

@@ -1,0 +1,46 @@
+Heptane Analysis, version 3.1
+Reading configuration file
+Executing from configuration file
+
+*** Begin analysis for entry point: InitializeA
+[INFO]	ICacheAnalysis: MUST done: 0.00177
+[INFO]	ICacheAnalysis: PS done: 0.001111
+[INFO]	ICacheAnalysis: MAY done: 0.001664
+[INFO]	******** ICACHE: 0.005175
+[INFO]	ICacheAnalysis: MUST done: 0.00351
+[INFO]	ICacheAnalysis: PS done: 0.001215
+[INFO]	ICacheAnalysis: MAY done: 0.003347
+[INFO]	******** ICACHE: 0.008759
+[INFO]	 ++++ Stack size = 32
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,904(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a2,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,904(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a2,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a2,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,904(a5)
+[INFO]	******** DATAADDRESS: 0.018583
+[INFO]	DcacheAnalysis: MUST done: 0.001498
+[INFO]	DcacheAnalysis: PS done: 0.001438
+[INFO]	DcacheAnalysis: MAY done: 0.00198
+[INFO]	******** DCACHE: 0.006414
+[INFO]	DcacheAnalysis: MUST done: 0.003033
+[INFO]	DcacheAnalysis: PS done: 0.001421
+[INFO]	DcacheAnalysis: MAY done: 0.004105
+[INFO]	******** DCACHE: 0.010149
+[INFO]	******** PIPELINE: 0.024715
+IPET method: NOPIPELINE_ICACHE_DCACHE
+[INFO]	******** IPET: 0.011363
+
+[INFO]	******** SESEANALYSIS: 0.001518
+L1	type ICACHE	references 15032	hits 15024	misses 8	
+L1	type DCACHE	references 2462	hits 2460	misses 2	
+L2	type ICACHE	references 8	hits 0	misses 8	
+L2	type DCACHE	references 2	hits 0	misses 2	
+[INFO]	******** CACHESTATISTICS: 0.001726
+[INFO]	 =======> Total time for the analyses = 0.173849
+WCET: 142794
+[INFO]	******** SIMPLEPRINT: 2.5e-05
+[INFO]	******** DOTPRINT: 0.005833
+[INFO]	******** CODELINE: 0.125293
+[INFO]	******** HTMLPRINT: 0.07057
+[INFO]	 =======> Total Time = 0.377396

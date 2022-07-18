@@ -1,0 +1,129 @@
+digraph G {
+subgraph cluster_foo {
+graph [label = "foo (SESE 0)"];
+subgraph cluster_sese_region0x55d3a83f56f0 {
+graph [label = "SESE 1"];
+node0x55d3a8318810 [label = "@0x100a4 (BB)\n frequency_c1=5\n"];
+};
+subgraph cluster_sese_region0x55d3a83c0f30 {
+graph [label = "SESE 2"];
+node0x55d3a83188a0 [label = "@0x100ac (BB)\n frequency_c1=25\n"];
+};
+subgraph cluster_sese_region0x55d3a834a270 {
+graph [label = "SESE 3"];
+node0x55d3a8319120 [label = "@0x100b4 (BB)\n frequency_c1=125\n"];
+};
+subgraph cluster_sese_region0x55d3a83bfeb0 {
+graph [label = "SESE 4"];
+node0x55d3a831cd70 [label = "@0x10128 (BB)\n frequency_c1=1\n"];
+};
+subgraph cluster_sese_region0x55d3a8357630 {
+graph [label = "SESE 5"];
+node0x55d3a831d8b0 [label = "@0x101f8 (BB)\n frequency_c1=625\n"];
+};
+subgraph cluster_sese_region0x55d3a8357750 {
+graph [label = "SESE 6"];
+node0x55d3a8330c00 [label = "@0x10210 (BB)\n frequency_c1=124\n"];
+};
+subgraph cluster_sese_region0x55d3a83577e0 {
+graph [label = "SESE 7"];
+node0x55d3a83f6160 [label = "@0x10228 (BB)\n frequency_c1=24\n"];
+};
+subgraph cluster_sese_region0x55d3a83c0030 {
+graph [label = "SESE 8"];
+node0x55d3a83f70a0 [label = "@0x10240 (BB)\n frequency_c1=4\n"];
+};
+subgraph cluster_sese_region0x55d3a835b800 {
+graph [label = "SESE 9"];
+node0x55d3a83f7fe0 [label = "@0x10258 (BB)\n frequency_c1=0\n"];
+};
+node0x55d3a8318700 [label = "@0x10094 (BB)\n frequency_c1=1\n" ,color="blue"];
+node0x55d3a8318810;
+node0x55d3a83188a0;
+node0x55d3a8319120;
+node0x55d3a8319680 [label = "@0x100bc (BB)\n frequency_c1=626\n"];
+node0x55d3a831cd70;
+node0x55d3a831d8b0;
+node0x55d3a8328cc0 [label = "@0x10204 (BB)\n frequency_c1=750\n" ,color="green"];
+node0x55d3a8330c00;
+node0x55d3a83f6080 [label = "@0x1021c (BB)\n frequency_c1=149\n" ,color="green"];
+node0x55d3a83f6160;
+node0x55d3a83f6900 [label = "@0x10234 (BB)\n frequency_c1=29\n" ,color="green"];
+node0x55d3a83f70a0;
+node0x55d3a83f7840 [label = "@0x1024c (BB)\n frequency_c1=5\n" ,color="green"];
+node0x55d3a83f7fe0;
+node0x55d3a83f8780 [label = "@0x1025c (BB)\n frequency_c1=1\n"];
+}
+subgraph cluster_SESERegion_of_foo {
+graph [label = "Region tree of foo"];
+region0x55d3a835ba80 [label = "SESE 0
+CFG region, entry = 10094"];
+region0x55d3a83f56f0 [label = "SESE 1
+entry = 1024c-->100a4
+exit = 100a4-->10234"];
+region0x55d3a83c0f30 [label = "SESE 2
+entry = 10234-->100ac
+exit = 100ac-->1021c"];
+region0x55d3a834a270 [label = "SESE 3
+entry = 1021c-->100b4
+exit = 100b4-->10204"];
+region0x55d3a83bfeb0 [label = "SESE 4
+entry = 100bc-->10128
+exit = 10128-->1025c"];
+region0x55d3a8357630 [label = "SESE 5
+entry = 100bc-->101f8
+exit = 101f8-->10204"];
+region0x55d3a8357750 [label = "SESE 6
+entry = 10204-->10210
+exit = 10210-->1021c"];
+region0x55d3a83577e0 [label = "SESE 7
+entry = 1021c-->10228
+exit = 10228-->10234"];
+region0x55d3a83c0030 [label = "SESE 8
+entry = 10234-->10240
+exit = 10240-->1024c"];
+region0x55d3a835b800 [label = "SESE 9
+entry = 1024c-->10258
+exit = 10258-->1025c"];
+region0x55d3a835ba80 -> region0x55d3a83f56f0;
+region0x55d3a835ba80 -> region0x55d3a83c0f30;
+region0x55d3a835ba80 -> region0x55d3a834a270;
+region0x55d3a835ba80 -> region0x55d3a83bfeb0;
+region0x55d3a835ba80 -> region0x55d3a8357630;
+region0x55d3a835ba80 -> region0x55d3a8357750;
+region0x55d3a835ba80 -> region0x55d3a83577e0;
+region0x55d3a835ba80 -> region0x55d3a83c0030;
+region0x55d3a835ba80 -> region0x55d3a835b800;
+}
+subgraph cluster_main {
+graph [label = "main (SESE 10)"];
+node0x55d3a8321110 [label = "@0x10268 (Call foo)\n frequency_c0=1\n" ,color="blue"];
+node0x55d3a83f8fc0 [label = "@0x10278 (BB)\n frequency_c0=1\n"];
+}
+subgraph cluster_SESERegion_of_main {
+graph [label = "Region tree of main"];
+region0x55d3a8334750 [label = "SESE 10
+CFG region, entry = 10268"];
+}
+node0x55d3a8318700 -> node0x55d3a83f7840;
+node0x55d3a8318810 -> node0x55d3a83f6900;
+node0x55d3a83188a0 -> node0x55d3a83f6080;
+node0x55d3a8319120 -> node0x55d3a8328cc0;
+node0x55d3a8319680 -> node0x55d3a831cd70;
+node0x55d3a8319680 -> node0x55d3a831d8b0;
+node0x55d3a831cd70 -> node0x55d3a83f8780;
+node0x55d3a831d8b0 -> node0x55d3a8328cc0[color="red"];
+node0x55d3a8328cc0 -> node0x55d3a8319680;
+node0x55d3a8328cc0 -> node0x55d3a8330c00;
+node0x55d3a8330c00 -> node0x55d3a83f6080[color="red"];
+node0x55d3a83f6080 -> node0x55d3a8319120;
+node0x55d3a83f6080 -> node0x55d3a83f6160;
+node0x55d3a83f6160 -> node0x55d3a83f6900[color="red"];
+node0x55d3a83f6900 -> node0x55d3a83188a0;
+node0x55d3a83f6900 -> node0x55d3a83f70a0;
+node0x55d3a83f70a0 -> node0x55d3a83f7840[color="red"];
+node0x55d3a83f7840 -> node0x55d3a8318810;
+node0x55d3a83f7840 -> node0x55d3a83f7fe0;
+node0x55d3a83f7fe0 -> node0x55d3a83f8780;
+node0x55d3a8321110 -> node0x55d3a83f8fc0;
+}

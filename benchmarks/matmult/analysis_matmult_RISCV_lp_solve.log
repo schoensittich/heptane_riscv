@@ -1,0 +1,61 @@
+Heptane Analysis, version 3.1
+Reading configuration file
+Executing from configuration file
+
+*** Begin analysis for entry point: main
+[INFO]	ICacheAnalysis: MUST done: 0.003255
+[INFO]	ICacheAnalysis: PS done: 0.001883
+[INFO]	ICacheAnalysis: MAY done: 0.004255
+[INFO]	******** ICACHE: 0.010461
+[INFO]	ICacheAnalysis: MUST done: 0.009724
+[INFO]	ICacheAnalysis: PS done: 0.002457
+[INFO]	ICacheAnalysis: MAY done: 0.007848
+[INFO]	******** ICACHE: 0.021181
+[INFO]	 ++++ Stack size = 64
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw zero,904(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,904(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a2,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,904(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a2,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw zero,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw zero,904(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,904(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a2,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,904(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a2,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw zero,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw zero,904(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a2,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,904(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,904(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw zero,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a2,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,0(a5)
+[INFO]	******** DATAADDRESS: 0.04098
+[INFO]	DcacheAnalysis: MUST done: 0.003661
+[INFO]	DcacheAnalysis: PS done: 0.006044
+[INFO]	DcacheAnalysis: MAY done: 0.005848
+[INFO]	******** DCACHE: 0.018269
+[INFO]	DcacheAnalysis: MUST done: 0.007924
+[INFO]	DcacheAnalysis: PS done: 0.005882
+[INFO]	DcacheAnalysis: MAY done: 0.010828
+[INFO]	******** DCACHE: 0.027339
+[INFO]	******** PIPELINE: 0.052733
+IPET method: NOPIPELINE_ICACHE_DCACHE
+[INFO]	******** IPET: 0.009011
+
+[INFO]	******** SESEANALYSIS: 0.000751
+L1	type ICACHE	references 388641	hits 388611	misses 30	
+L1	type DCACHE	references 28929	hits 4922	misses 24007	
+L2	type ICACHE	references 30	hits 3	misses 27	
+L2	type DCACHE	references 24007	hits 23922	misses 85	
+[INFO]	******** CACHESTATISTICS: 0.002298
+[INFO]	 =======> Total time for the analyses = 0.24349
+WCET: 1757920
+[INFO]	******** SIMPLEPRINT: 3e-06
+[INFO]	******** DOTPRINT: 0.001647
+[INFO]	******** CODELINE: 0.045269
+[INFO]	******** HTMLPRINT: 0.001813
+[INFO]	 =======> Total Time = 0.293539

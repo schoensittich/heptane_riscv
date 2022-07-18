@@ -1,0 +1,46 @@
+Heptane Analysis, version 3.1
+Reading configuration file
+Executing from configuration file
+
+*** Begin analysis for entry point: Multiply
+[INFO]	ICacheAnalysis: MUST done: 0.002356
+[INFO]	ICacheAnalysis: PS done: 0.002051
+[INFO]	ICacheAnalysis: MAY done: 0.010999
+[INFO]	******** ICACHE: 0.0162
+[INFO]	ICacheAnalysis: MUST done: 0.012659
+[INFO]	ICacheAnalysis: PS done: 0.002054
+[INFO]	ICacheAnalysis: MAY done: 0.005468
+[INFO]	******** ICACHE: 0.020898
+[INFO]	 ++++ Stack size = 16
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw zero,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw zero,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw zero,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,0(a5)
+[INFO]	******** DATAADDRESS: 0.021997
+[INFO]	DcacheAnalysis: MUST done: 0.01055
+[INFO]	DcacheAnalysis: PS done: 0.005101
+[INFO]	DcacheAnalysis: MAY done: 0.003754
+[INFO]	******** DCACHE: 0.020952
+[INFO]	DcacheAnalysis: MUST done: 0.004712
+[INFO]	DcacheAnalysis: PS done: 0.004952
+[INFO]	DcacheAnalysis: MAY done: 0.006234
+[INFO]	******** DCACHE: 0.017832
+[INFO]	******** PIPELINE: 0.044662
+IPET method: NOPIPELINE_ICACHE_DCACHE
+[INFO]	******** IPET: 0.015078
+
+[INFO]	******** SESEANALYSIS: 0.001481
+L1	type ICACHE	references 358955	hits 358944	misses 11	
+L1	type DCACHE	references 24003	hits 2	misses 24001	
+L2	type ICACHE	references 11	hits 1	misses 10	
+L2	type DCACHE	references 24001	hits 23922	misses 79	
+[INFO]	******** CACHESTATISTICS: 0.003162
+[INFO]	 =======> Total time for the analyses = 0.250546
+WCET: 1472278
+[INFO]	******** SIMPLEPRINT: 2.5e-05
+[INFO]	******** DOTPRINT: 0.002406
+[INFO]	******** CODELINE: 0.119972
+[INFO]	******** HTMLPRINT: 0.001782
+[INFO]	 =======> Total Time = 0.376663

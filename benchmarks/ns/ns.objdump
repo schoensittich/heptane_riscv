@@ -1,0 +1,161 @@
+
+/tmp/ns:     file format elf32-littleriscv
+
+SYMBOL TABLE:
+00010094 l    d  .text	00000000 .text
+0001128c l    d  .data	00000000 .data
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .wcet_annot	00000000 .wcet_annot
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_line_str	00000000 .debug_line_str
+00000000 l    df *ABS*	00000000 ns.c
+00011e14 g       *ABS*	00000000 __global_pointer$
+00012614 g       .data	00000000 __SDATA_BEGIN__
+00012614 g       .data	00000000 __BSS_END__
+00012614 g       .data	00000000 __bss_start
+00010268 g     F .text	00000024 main
+00011c50 g     O .data	000009c4 answer
+00010094 g     F .text	000001d4 foo
+0001128c g       .data	00000000 __DATA_BEGIN__
+00012614 g       .data	00000000 _edata
+00012614 g       .data	00000000 _end
+0001128c g     O .data	000009c4 keys
+
+
+
+Disassembly of section .text:
+
+00010094 <foo>:
+   10094:	fe010113          	addi	sp,sp,-32
+   10098:	00a12623          	sw	a0,12(sp)
+   1009c:	00012e23          	sw	zero,28(sp)
+   100a0:	1ac0006f          	j	1024c <foo+0x1b8>
+   100a4:	00012c23          	sw	zero,24(sp)
+   100a8:	18c0006f          	j	10234 <foo+0x1a0>
+   100ac:	00012a23          	sw	zero,20(sp)
+   100b0:	16c0006f          	j	1021c <foo+0x188>
+   100b4:	00012823          	sw	zero,16(sp)
+   100b8:	14c0006f          	j	10204 <foo+0x170>
+   100bc:	000117b7          	lui	a5,0x11
+   100c0:	28c78593          	addi	a1,a5,652 # 1128c <keys>
+   100c4:	01412783          	lw	a5,20(sp)
+   100c8:	01812683          	lw	a3,24(sp)
+   100cc:	01c12603          	lw	a2,28(sp)
+   100d0:	00078713          	mv	a4,a5
+   100d4:	00271713          	slli	a4,a4,0x2
+   100d8:	00f70733          	add	a4,a4,a5
+   100dc:	00060793          	mv	a5,a2
+   100e0:	00579793          	slli	a5,a5,0x5
+   100e4:	40c787b3          	sub	a5,a5,a2
+   100e8:	00279793          	slli	a5,a5,0x2
+   100ec:	00c787b3          	add	a5,a5,a2
+   100f0:	00f70733          	add	a4,a4,a5
+   100f4:	00068793          	mv	a5,a3
+   100f8:	00179793          	slli	a5,a5,0x1
+   100fc:	00d787b3          	add	a5,a5,a3
+   10100:	00379793          	slli	a5,a5,0x3
+   10104:	00d787b3          	add	a5,a5,a3
+   10108:	00f70733          	add	a4,a4,a5
+   1010c:	01012783          	lw	a5,16(sp)
+   10110:	00f707b3          	add	a5,a4,a5
+   10114:	00279793          	slli	a5,a5,0x2
+   10118:	00f587b3          	add	a5,a1,a5
+   1011c:	0007a783          	lw	a5,0(a5)
+   10120:	00c12703          	lw	a4,12(sp)
+   10124:	0cf71a63          	bne	a4,a5,101f8 <foo+0x164>
+   10128:	000127b7          	lui	a5,0x12
+   1012c:	c5078593          	addi	a1,a5,-944 # 11c50 <answer>
+   10130:	01412783          	lw	a5,20(sp)
+   10134:	01812683          	lw	a3,24(sp)
+   10138:	01c12603          	lw	a2,28(sp)
+   1013c:	00078713          	mv	a4,a5
+   10140:	00271713          	slli	a4,a4,0x2
+   10144:	00f70733          	add	a4,a4,a5
+   10148:	00060793          	mv	a5,a2
+   1014c:	00579793          	slli	a5,a5,0x5
+   10150:	40c787b3          	sub	a5,a5,a2
+   10154:	00279793          	slli	a5,a5,0x2
+   10158:	00c787b3          	add	a5,a5,a2
+   1015c:	00f70733          	add	a4,a4,a5
+   10160:	00068793          	mv	a5,a3
+   10164:	00179793          	slli	a5,a5,0x1
+   10168:	00d787b3          	add	a5,a5,a3
+   1016c:	00379793          	slli	a5,a5,0x3
+   10170:	00d787b3          	add	a5,a5,a3
+   10174:	00f70733          	add	a4,a4,a5
+   10178:	01012783          	lw	a5,16(sp)
+   1017c:	00f707b3          	add	a5,a4,a5
+   10180:	00279793          	slli	a5,a5,0x2
+   10184:	00f587b3          	add	a5,a1,a5
+   10188:	0007a583          	lw	a1,0(a5)
+   1018c:	000117b7          	lui	a5,0x11
+   10190:	28c78513          	addi	a0,a5,652 # 1128c <keys>
+   10194:	01412783          	lw	a5,20(sp)
+   10198:	01812683          	lw	a3,24(sp)
+   1019c:	01c12603          	lw	a2,28(sp)
+   101a0:	00078713          	mv	a4,a5
+   101a4:	00271713          	slli	a4,a4,0x2
+   101a8:	00f70733          	add	a4,a4,a5
+   101ac:	00060793          	mv	a5,a2
+   101b0:	00579793          	slli	a5,a5,0x5
+   101b4:	40c787b3          	sub	a5,a5,a2
+   101b8:	00279793          	slli	a5,a5,0x2
+   101bc:	00c787b3          	add	a5,a5,a2
+   101c0:	00f70733          	add	a4,a4,a5
+   101c4:	00068793          	mv	a5,a3
+   101c8:	00179793          	slli	a5,a5,0x1
+   101cc:	00d787b3          	add	a5,a5,a3
+   101d0:	00379793          	slli	a5,a5,0x3
+   101d4:	00d787b3          	add	a5,a5,a3
+   101d8:	00f70733          	add	a4,a4,a5
+   101dc:	01012783          	lw	a5,16(sp)
+   101e0:	00f707b3          	add	a5,a4,a5
+   101e4:	00279793          	slli	a5,a5,0x2
+   101e8:	00f507b3          	add	a5,a0,a5
+   101ec:	0007a783          	lw	a5,0(a5)
+   101f0:	00f587b3          	add	a5,a1,a5
+   101f4:	0680006f          	j	1025c <foo+0x1c8>
+   101f8:	01012783          	lw	a5,16(sp)
+   101fc:	00178793          	addi	a5,a5,1
+   10200:	00f12823          	sw	a5,16(sp)
+   10204:	01012703          	lw	a4,16(sp)
+   10208:	00400793          	li	a5,4
+   1020c:	eae7d8e3          	bge	a5,a4,100bc <foo+0x28>
+   10210:	01412783          	lw	a5,20(sp)
+   10214:	00178793          	addi	a5,a5,1
+   10218:	00f12a23          	sw	a5,20(sp)
+   1021c:	01412703          	lw	a4,20(sp)
+   10220:	00400793          	li	a5,4
+   10224:	e8e7d8e3          	bge	a5,a4,100b4 <foo+0x20>
+   10228:	01812783          	lw	a5,24(sp)
+   1022c:	00178793          	addi	a5,a5,1
+   10230:	00f12c23          	sw	a5,24(sp)
+   10234:	01812703          	lw	a4,24(sp)
+   10238:	00400793          	li	a5,4
+   1023c:	e6e7d8e3          	bge	a5,a4,100ac <foo+0x18>
+   10240:	01c12783          	lw	a5,28(sp)
+   10244:	00178793          	addi	a5,a5,1
+   10248:	00f12e23          	sw	a5,28(sp)
+   1024c:	01c12703          	lw	a4,28(sp)
+   10250:	00400793          	li	a5,4
+   10254:	e4e7d8e3          	bge	a5,a4,100a4 <foo+0x10>
+   10258:	fff00793          	li	a5,-1
+   1025c:	00078513          	mv	a0,a5
+   10260:	02010113          	addi	sp,sp,32
+   10264:	00008067          	ret
+
+00010268 <main>:
+   10268:	ff010113          	addi	sp,sp,-16
+   1026c:	00112623          	sw	ra,12(sp)
+   10270:	19000513          	li	a0,400
+   10274:	e21ff0ef          	jal	ra,10094 <foo>
+   10278:	00000793          	li	a5,0
+   1027c:	00078513          	mv	a0,a5
+   10280:	00c12083          	lw	ra,12(sp)
+   10284:	01010113          	addi	sp,sp,16
+   10288:	00008067          	ret

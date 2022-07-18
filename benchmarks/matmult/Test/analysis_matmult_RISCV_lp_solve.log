@@ -1,0 +1,58 @@
+Heptane Analysis, version 3.1
+Reading configuration file
+Executing from configuration file
+
+*** Begin analysis for entry point: Test
+[INFO]	ICacheAnalysis: MUST done: 0.006553
+[INFO]	ICacheAnalysis: PS done: 0.004164
+[INFO]	ICacheAnalysis: MAY done: 0.009243
+[INFO]	******** ICACHE: 0.021907
+[INFO]	ICacheAnalysis: MUST done: 0.012793
+[INFO]	ICacheAnalysis: PS done: 0.00476
+[INFO]	ICacheAnalysis: MAY done: 0.014449
+[INFO]	******** ICACHE: 0.034171
+[INFO]	 ++++ Stack size = 48
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,904(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a2,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,904(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a2,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw zero,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,904(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a2,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,904(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a2,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw zero,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a2,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,904(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,904(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw zero,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a2,0(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw a4,0(a5)
+[INFO]	******** DATAADDRESS: 0.066349
+[INFO]	DcacheAnalysis: MUST done: 0.005833
+[INFO]	DcacheAnalysis: PS done: 0.008093
+[INFO]	DcacheAnalysis: MAY done: 0.011368
+[INFO]	******** DCACHE: 0.03038
+[INFO]	DcacheAnalysis: MUST done: 0.012247
+[INFO]	DcacheAnalysis: PS done: 0.007982
+[INFO]	DcacheAnalysis: MAY done: 0.017585
+[INFO]	******** DCACHE: 0.042841
+[INFO]	******** PIPELINE: 0.102767
+IPET method: NOPIPELINE_ICACHE_DCACHE
+[INFO]	******** IPET: 0.019031
+
+[INFO]	******** SESEANALYSIS: 0.001506
+L1	type ICACHE	references 388628	hits 388600	misses 28	
+L1	type DCACHE	references 28928	hits 4920	misses 24008	
+L2	type ICACHE	references 28	hits 2	misses 26	
+L2	type DCACHE	references 24008	hits 23922	misses 86	
+[INFO]	******** CACHESTATISTICS: 0.004938
+[INFO]	 =======> Total time for the analyses = 0.432377
+WCET: 1757696
+[INFO]	******** SIMPLEPRINT: 1.6e-05
+[INFO]	******** DOTPRINT: 0.007907
+[INFO]	******** CODELINE: 0.093789
+[INFO]	******** HTMLPRINT: 0.002361
+[INFO]	 =======> Total Time = 0.538555

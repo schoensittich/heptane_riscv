@@ -1,0 +1,43 @@
+Heptane Analysis, version 3.1
+Reading configuration file
+Executing from configuration file
+
+*** Begin analysis for entry point: InitSeed
+[INFO]	ICacheAnalysis: MUST done: 0.000162
+[INFO]	ICacheAnalysis: PS done: 3.4e-05
+[INFO]	ICacheAnalysis: MAY done: 0.000115
+[INFO]	******** ICACHE: 0.000459
+[INFO]	ICacheAnalysis: MUST done: 0.000169
+[INFO]	ICacheAnalysis: PS done: 2.8e-05
+[INFO]	ICacheAnalysis: MAY done: 9.3e-05
+[INFO]	******** ICACHE: 0.000373
+[INFO]	 ++++ Stack size = 0
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw zero,904(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw zero,904(a5)
+*** DEBUG: RISCV_DSTORE::simulate, getRegisterAndIndexStack returns false for sw zero,904(a5)
+[INFO]	******** DATAADDRESS: 0.001078
+[INFO]	DcacheAnalysis: MUST done: 0.000127
+[INFO]	DcacheAnalysis: PS done: 3.1e-05
+[INFO]	DcacheAnalysis: MAY done: 9.7e-05
+[INFO]	******** DCACHE: 0.000435
+[INFO]	DcacheAnalysis: MUST done: 0.000231
+[INFO]	DcacheAnalysis: PS done: 3.9e-05
+[INFO]	DcacheAnalysis: MAY done: 0.000161
+[INFO]	******** DCACHE: 0.000637
+[INFO]	******** PIPELINE: 0.000314
+IPET method: NOPIPELINE_ICACHE_DCACHE
+[INFO]	******** IPET: 0.006354
+
+[INFO]	******** SESEANALYSIS: 0.001456
+L1	type ICACHE	references 4	hits 2	misses 2	
+L1	type DCACHE	references 0	hits 0	misses 0	
+L2	type ICACHE	references 2	hits 0	misses 2	
+L2	type DCACHE	references 0	hits 0	misses 0	
+[INFO]	******** CACHESTATISTICS: 0.000229
+[INFO]	 =======> Total time for the analyses = 0.078313
+WCET: 324
+[INFO]	******** SIMPLEPRINT: 2.1e-05
+[INFO]	******** DOTPRINT: 0.003452
+[INFO]	******** CODELINE: 0.125176
+[INFO]	******** HTMLPRINT: 0.001628
+[INFO]	 =======> Total Time = 0.210667

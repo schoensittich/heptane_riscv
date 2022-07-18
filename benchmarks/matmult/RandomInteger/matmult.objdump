@@ -1,0 +1,242 @@
+
+/tmp/matmult:     file format elf32-littleriscv
+
+SYMBOL TABLE:
+00010094 l    d  .text	00000000 .text
+00011388 l    d  .sbss	00000000 .sbss
+0001138c l    d  .bss	00000000 .bss
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .wcet_annot	00000000 .wcet_annot
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_line_str	00000000 .debug_line_str
+00000000 l    df *ABS*	00000000 matmult.c
+00011b88 g       *ABS*	00000000 __global_pointer$
+00011388 g     O .sbss	00000004 Seed
+00010254 g     F .text	00000134 Multiply
+00010210 g     F .text	00000044 RandomInteger
+00010180 g     F .text	00000090 InitializeB
+00011388 g       .text	00000000 __SDATA_BEGIN__
+000100c8 g     F .text	00000024 Test
+0001138c g     O .bss	00000640 A
+000100b8 g     F .text	00000010 InitSeed
+000119cc g     O .bss	00000640 B
+0001264c g       .bss	00000000 __BSS_END__
+0001200c g     O .bss	00000640 Res
+00011388 g       .sbss	00000000 __bss_start
+00010094 g     F .text	00000024 main
+00011388 g       .text	00000000 __DATA_BEGIN__
+000100ec g     F .text	00000094 InitializeA
+00011388 g       .text	00000000 _edata
+0001264c g       .bss	00000000 _end
+
+
+
+Disassembly of section .text:
+
+00010094 <main>:
+   10094:	ff010113          	addi	sp,sp,-16
+   10098:	00112623          	sw	ra,12(sp)
+   1009c:	01c000ef          	jal	ra,100b8 <InitSeed>
+   100a0:	028000ef          	jal	ra,100c8 <Test>
+   100a4:	00000793          	li	a5,0
+   100a8:	00078513          	mv	a0,a5
+   100ac:	00c12083          	lw	ra,12(sp)
+   100b0:	01010113          	addi	sp,sp,16
+   100b4:	00008067          	ret
+
+000100b8 <InitSeed>:
+   100b8:	000117b7          	lui	a5,0x11
+   100bc:	3807a423          	sw	zero,904(a5) # 11388 <__DATA_BEGIN__>
+   100c0:	00000013          	nop
+   100c4:	00008067          	ret
+
+000100c8 <Test>:
+   100c8:	ff010113          	addi	sp,sp,-16
+   100cc:	00112623          	sw	ra,12(sp)
+   100d0:	01c000ef          	jal	ra,100ec <InitializeA>
+   100d4:	0ac000ef          	jal	ra,10180 <InitializeB>
+   100d8:	17c000ef          	jal	ra,10254 <Multiply>
+   100dc:	00000013          	nop
+   100e0:	00c12083          	lw	ra,12(sp)
+   100e4:	01010113          	addi	sp,sp,16
+   100e8:	00008067          	ret
+
+000100ec <InitializeA>:
+   100ec:	fe010113          	addi	sp,sp,-32
+   100f0:	00112e23          	sw	ra,28(sp)
+   100f4:	00012623          	sw	zero,12(sp)
+   100f8:	0680006f          	j	10160 <InitializeA+0x74>
+   100fc:	00012423          	sw	zero,8(sp)
+   10100:	0480006f          	j	10148 <InitializeA+0x5c>
+   10104:	10c000ef          	jal	ra,10210 <RandomInteger>
+   10108:	00050613          	mv	a2,a0
+   1010c:	000117b7          	lui	a5,0x11
+   10110:	38c78693          	addi	a3,a5,908 # 1138c <A>
+   10114:	00c12703          	lw	a4,12(sp)
+   10118:	00070793          	mv	a5,a4
+   1011c:	00279793          	slli	a5,a5,0x2
+   10120:	00e787b3          	add	a5,a5,a4
+   10124:	00279793          	slli	a5,a5,0x2
+   10128:	00812703          	lw	a4,8(sp)
+   1012c:	00e787b3          	add	a5,a5,a4
+   10130:	00279793          	slli	a5,a5,0x2
+   10134:	00f687b3          	add	a5,a3,a5
+   10138:	00c7a023          	sw	a2,0(a5)
+   1013c:	00812783          	lw	a5,8(sp)
+   10140:	00178793          	addi	a5,a5,1
+   10144:	00f12423          	sw	a5,8(sp)
+   10148:	00812703          	lw	a4,8(sp)
+   1014c:	01300793          	li	a5,19
+   10150:	fae7dae3          	bge	a5,a4,10104 <InitializeA+0x18>
+   10154:	00c12783          	lw	a5,12(sp)
+   10158:	00178793          	addi	a5,a5,1
+   1015c:	00f12623          	sw	a5,12(sp)
+   10160:	00c12703          	lw	a4,12(sp)
+   10164:	01300793          	li	a5,19
+   10168:	f8e7dae3          	bge	a5,a4,100fc <InitializeA+0x10>
+   1016c:	00000013          	nop
+   10170:	00000013          	nop
+   10174:	01c12083          	lw	ra,28(sp)
+   10178:	02010113          	addi	sp,sp,32
+   1017c:	00008067          	ret
+
+00010180 <InitializeB>:
+   10180:	fe010113          	addi	sp,sp,-32
+   10184:	00112e23          	sw	ra,28(sp)
+   10188:	00012623          	sw	zero,12(sp)
+   1018c:	0640006f          	j	101f0 <InitializeB+0x70>
+   10190:	00012423          	sw	zero,8(sp)
+   10194:	0440006f          	j	101d8 <InitializeB+0x58>
+   10198:	078000ef          	jal	ra,10210 <RandomInteger>
+   1019c:	00050613          	mv	a2,a0
+   101a0:	e4418693          	addi	a3,gp,-444 # 119cc <B>
+   101a4:	00c12703          	lw	a4,12(sp)
+   101a8:	00070793          	mv	a5,a4
+   101ac:	00279793          	slli	a5,a5,0x2
+   101b0:	00e787b3          	add	a5,a5,a4
+   101b4:	00279793          	slli	a5,a5,0x2
+   101b8:	00812703          	lw	a4,8(sp)
+   101bc:	00e787b3          	add	a5,a5,a4
+   101c0:	00279793          	slli	a5,a5,0x2
+   101c4:	00f687b3          	add	a5,a3,a5
+   101c8:	00c7a023          	sw	a2,0(a5)
+   101cc:	00812783          	lw	a5,8(sp)
+   101d0:	00178793          	addi	a5,a5,1
+   101d4:	00f12423          	sw	a5,8(sp)
+   101d8:	00812703          	lw	a4,8(sp)
+   101dc:	01300793          	li	a5,19
+   101e0:	fae7dce3          	bge	a5,a4,10198 <InitializeB+0x18>
+   101e4:	00c12783          	lw	a5,12(sp)
+   101e8:	00178793          	addi	a5,a5,1
+   101ec:	00f12623          	sw	a5,12(sp)
+   101f0:	00c12703          	lw	a4,12(sp)
+   101f4:	01300793          	li	a5,19
+   101f8:	f8e7dce3          	bge	a5,a4,10190 <InitializeB+0x10>
+   101fc:	00000013          	nop
+   10200:	00000013          	nop
+   10204:	01c12083          	lw	ra,28(sp)
+   10208:	02010113          	addi	sp,sp,32
+   1020c:	00008067          	ret
+
+00010210 <RandomInteger>:
+   10210:	000117b7          	lui	a5,0x11
+   10214:	3887a703          	lw	a4,904(a5) # 11388 <__DATA_BEGIN__>
+   10218:	00070793          	mv	a5,a4
+   1021c:	00579793          	slli	a5,a5,0x5
+   10220:	00e787b3          	add	a5,a5,a4
+   10224:	00279793          	slli	a5,a5,0x2
+   10228:	00e787b3          	add	a5,a5,a4
+   1022c:	05178713          	addi	a4,a5,81
+   10230:	000027b7          	lui	a5,0x2
+   10234:	f9f78793          	addi	a5,a5,-97 # 1f9f <main-0xe0f5>
+   10238:	02f76733          	rem	a4,a4,a5
+   1023c:	000117b7          	lui	a5,0x11
+   10240:	38e7a423          	sw	a4,904(a5) # 11388 <__DATA_BEGIN__>
+   10244:	000117b7          	lui	a5,0x11
+   10248:	3887a783          	lw	a5,904(a5) # 11388 <__DATA_BEGIN__>
+   1024c:	00078513          	mv	a0,a5
+   10250:	00008067          	ret
+
+00010254 <Multiply>:
+   10254:	ff010113          	addi	sp,sp,-16
+   10258:	00812623          	sw	s0,12(sp)
+   1025c:	00912423          	sw	s1,8(sp)
+   10260:	01212223          	sw	s2,4(sp)
+   10264:	00000413          	li	s0,0
+   10268:	0fc0006f          	j	10364 <Multiply+0x110>
+   1026c:	00000493          	li	s1,0
+   10270:	0e80006f          	j	10358 <Multiply+0x104>
+   10274:	000127b7          	lui	a5,0x12
+   10278:	00c78713          	addi	a4,a5,12 # 1200c <Res>
+   1027c:	00040793          	mv	a5,s0
+   10280:	00279793          	slli	a5,a5,0x2
+   10284:	008787b3          	add	a5,a5,s0
+   10288:	00279793          	slli	a5,a5,0x2
+   1028c:	009787b3          	add	a5,a5,s1
+   10290:	00279793          	slli	a5,a5,0x2
+   10294:	00f707b3          	add	a5,a4,a5
+   10298:	0007a023          	sw	zero,0(a5)
+   1029c:	00000913          	li	s2,0
+   102a0:	0ac0006f          	j	1034c <Multiply+0xf8>
+   102a4:	000127b7          	lui	a5,0x12
+   102a8:	00c78713          	addi	a4,a5,12 # 1200c <Res>
+   102ac:	00040793          	mv	a5,s0
+   102b0:	00279793          	slli	a5,a5,0x2
+   102b4:	008787b3          	add	a5,a5,s0
+   102b8:	00279793          	slli	a5,a5,0x2
+   102bc:	009787b3          	add	a5,a5,s1
+   102c0:	00279793          	slli	a5,a5,0x2
+   102c4:	00f707b3          	add	a5,a4,a5
+   102c8:	0007a703          	lw	a4,0(a5)
+   102cc:	000117b7          	lui	a5,0x11
+   102d0:	38c78693          	addi	a3,a5,908 # 1138c <A>
+   102d4:	00040793          	mv	a5,s0
+   102d8:	00279793          	slli	a5,a5,0x2
+   102dc:	008787b3          	add	a5,a5,s0
+   102e0:	00279793          	slli	a5,a5,0x2
+   102e4:	012787b3          	add	a5,a5,s2
+   102e8:	00279793          	slli	a5,a5,0x2
+   102ec:	00f687b3          	add	a5,a3,a5
+   102f0:	0007a683          	lw	a3,0(a5)
+   102f4:	e4418613          	addi	a2,gp,-444 # 119cc <B>
+   102f8:	00090793          	mv	a5,s2
+   102fc:	00279793          	slli	a5,a5,0x2
+   10300:	012787b3          	add	a5,a5,s2
+   10304:	00279793          	slli	a5,a5,0x2
+   10308:	009787b3          	add	a5,a5,s1
+   1030c:	00279793          	slli	a5,a5,0x2
+   10310:	00f607b3          	add	a5,a2,a5
+   10314:	0007a783          	lw	a5,0(a5)
+   10318:	02f687b3          	mul	a5,a3,a5
+   1031c:	00f70733          	add	a4,a4,a5
+   10320:	000127b7          	lui	a5,0x12
+   10324:	00c78693          	addi	a3,a5,12 # 1200c <Res>
+   10328:	00040793          	mv	a5,s0
+   1032c:	00279793          	slli	a5,a5,0x2
+   10330:	008787b3          	add	a5,a5,s0
+   10334:	00279793          	slli	a5,a5,0x2
+   10338:	009787b3          	add	a5,a5,s1
+   1033c:	00279793          	slli	a5,a5,0x2
+   10340:	00f687b3          	add	a5,a3,a5
+   10344:	00e7a023          	sw	a4,0(a5)
+   10348:	00190913          	addi	s2,s2,1
+   1034c:	01300793          	li	a5,19
+   10350:	f527dae3          	bge	a5,s2,102a4 <Multiply+0x50>
+   10354:	00148493          	addi	s1,s1,1
+   10358:	01300793          	li	a5,19
+   1035c:	f097dce3          	bge	a5,s1,10274 <Multiply+0x20>
+   10360:	00140413          	addi	s0,s0,1
+   10364:	01300793          	li	a5,19
+   10368:	f087d2e3          	bge	a5,s0,1026c <Multiply+0x18>
+   1036c:	00000013          	nop
+   10370:	00000013          	nop
+   10374:	00c12403          	lw	s0,12(sp)
+   10378:	00812483          	lw	s1,8(sp)
+   1037c:	00412903          	lw	s2,4(sp)
+   10380:	01010113          	addi	sp,sp,16
+   10384:	00008067          	ret
